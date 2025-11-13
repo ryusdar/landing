@@ -81,12 +81,28 @@ ctaBtns.forEach(btn => {
   });
 });
 
-// Formulario de suscripción
-const form = document.querySelector('.subscribe-form');
-if (form) {
-  form.addEventListener('submit', function(e) {
+// Validación de Gmail para formulario de suscripción
+document.addEventListener('DOMContentLoaded', function() {
+  const subscribeForm = document.querySelector('.subscribe-form');
+  const emailInput = document.getElementById('email');
+  
+  subscribeForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    form.innerHTML = `<p style='color:#FFD700;font-weight:bold;'>¡Gracias por suscribirte, gamer!</p>`;
+    
+    const email = emailInput.value.trim();
+    
+    // Validar que sea un email de Gmail
+    const gmailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+    
+    if (!gmailRegex.test(email)) {
+      alert('Por favor, ingresa un email válido de Gmail (@gmail.com)');
+      return;
+    }
+    
+    // Mostrar alerta de éxito
+    alert('¡Suscripción exitosa! Gracias por suscribirte.');
+    
+    // Borrar el contenido del input
+    emailInput.value = '';
   });
-}
+});
