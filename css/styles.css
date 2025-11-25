@@ -1,0 +1,326 @@
+/*
+  Paleta: Rojo #D72638, Dorado #FFD700, Negro #181818, Detalles #FFFAE3
+  Tipografía: Orbitron (futurista), Zen Dots (oriental)
+*/
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Zen Dots', Arial, sans-serif;
+  background: #181818;
+  color: #FFFAE3;
+  overflow-x: hidden;
+}
+
+#bg-particles {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero {
+  background: linear-gradient(120deg, #D72638 60%, #FFD700 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-content {
+  text-align: center;
+  z-index: 2;
+}
+.hero-img {
+  width: 320px;
+  max-width: 80vw;
+  filter: drop-shadow(0 0 40px #FFD70088);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.hero h1 {
+  font-family: 'Zen Dots', 'Orbitron', Arial, sans-serif;
+  font-size: 2.7rem;
+  color: #FFFAE3;
+  margin: 1.2rem 0 1.5rem 0;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px #D72638, 0 0 24px #FFD70088;
+}
+.hero .highlight {
+  color: #FFD700;
+  text-shadow: 0 0 8px #FFD700, 0 0 16px #D72638;
+}
+.cta-btn {
+  background: #D72638;
+  color: #FFFAE3;
+  border: none;
+  padding: 1rem 2.2rem;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: 'Orbitron', Arial, sans-serif;
+  margin-top: 1.2rem;
+  transition: box-shadow 0.2s, background 0.2s;
+  position: relative;
+  z-index: 2;
+}
+.cta-btn.neon {
+  box-shadow: 0 0 16px 4px #FFD70088, 0 0 32px 8px #D7263844;
+  background: linear-gradient(90deg, #FFD700 40%, #D72638 100%);
+  color: #181818;
+  font-weight: bold;
+}
+.cta-btn.neon:hover {
+  background: #FFD700;
+  color: #D72638;
+  box-shadow: 0 0 32px 8px #FFD700, 0 0 64px 16px #D7263888;
+  text-shadow: 0 0 8px #FFD700, 0 0 16px #D72638;
+}
+
+.benefits {
+  background: #181818;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+.benefits h2 {
+  color: #FFD700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Zen Dots', Arial, sans-serif;
+}
+.benefit-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.card {
+  background: #222;
+  border: 2px solid #FFD70044;
+  border-radius: 18px;
+  padding: 1.5rem 1.2rem;
+  width: 220px;
+  box-shadow: 0 0 16px #D7263844;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 0 32px #FFD70088, 0 0 16px #D72638;
+}
+.card img {
+  width: 60px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px #FFD70088);
+}
+.card h3 {
+  color: #FFD700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+.card p {
+  color: #FFFAE3;
+  font-size: 0.98rem;
+}
+
+.reviews {
+  background: linear-gradient(90deg, #181818 60%, #D72638 100%);
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+.reviews h2 {
+  color: #FFD700;
+  font-family: 'Zen Dots', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.review-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.review {
+  background: #222;
+  border-radius: 16px;
+  padding: 1.2rem 1rem;
+  width: 220px;
+  box-shadow: 0 0 12px #FFD70044;
+  color: #FFFAE3;
+  font-size: 1rem;
+  position: relative;
+}
+.stars {
+  color: #FFD700;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.offer {
+  background: #D72638;
+  color: #FFFAE3;
+  text-align: center;
+  padding: 2.5rem 1rem 2rem 1rem;
+  position: relative;
+}
+.offer h2 {
+  color: #FFD700;
+  font-family: 'Zen Dots', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.offer-desc {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.offer-highlight {
+  color: #FFD700;
+  font-weight: bold;
+  text-shadow: 0 0 8px #FFD700, 0 0 16px #D72638;
+}
+.timer {
+  font-size: 2rem;
+  color: #FFD700;
+  margin-bottom: 1.2rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #FFD700, 0 0 16px #D72638;
+}
+
+.comparison {
+  background: #181818;
+  color: #FFFAE3;
+  text-align: center;
+  padding: 2.5rem 1rem 2rem 1rem;
+}
+.comparison h2 {
+  color: #FFD700;
+  font-family: 'Zen Dots', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+.comparison table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px #FFD70044;
+}
+.comparison th, .comparison td {
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid #FFD70044;
+  font-size: 1rem;
+}
+.comparison th {
+  background: #FFD700;
+  color: #181818;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+.comparison td {
+  color: #FFFAE3;
+}
+.comparison tr:last-child td {
+  border-bottom: none;
+}
+
+.guarantee {
+  background: linear-gradient(90deg, #FFD700 60%, #D72638 100%);
+  color: #181818;
+  text-align: center;
+  padding: 2rem 1rem 2rem 1rem;
+}
+.guarantee h2 {
+  font-family: 'Zen Dots', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.guarantee p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+footer {
+  background: #181818;
+  color: #FFD700;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  position: relative;
+}
+.footer-social {
+  margin-bottom: 1.2rem;
+}
+.social-btn {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  background: #222;
+  color: #FFD700;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #FFD70044;
+}
+.social-btn:hover {
+  background: #FFD700;
+  color: #D72638;
+  box-shadow: 0 0 16px #FFD700, 0 0 32px #D7263844;
+}
+.social-btn.whatsapp:hover { color: #25D366; }
+.social-btn.instagram:hover { color: #E1306C; }
+.social-btn.tiktok:hover { color: #000; }
+
+.subscribe-form {
+  margin: 1.2rem auto 0 auto;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.subscribe-form input[type="email"] {
+  padding: 0.7rem 1rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+.subscribe-form button {
+  align-self: center;
+}
+.footer-copy {
+  margin-top: 1.2rem;
+  color: #FFFAE3;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .benefit-cards, .review-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card, .review {
+    width: 90vw;
+    max-width: 340px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-img {
+    width: 90vw;
+    max-width: 260px;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .benefits, .reviews, .offer, .comparison, .guarantee, footer {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
